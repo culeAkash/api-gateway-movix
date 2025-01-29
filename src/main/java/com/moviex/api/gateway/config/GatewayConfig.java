@@ -14,6 +14,10 @@ public class GatewayConfig {
         return builder.routes()
                 .route("user-service",r->r.path("/api/v1/users/**")
                         .uri("lb://user-service")
-                ).build();
+                )
+                .route("movie-service",r->r.path("/api/v1/movies/**")
+                        .uri("lb://movie-service")
+                )
+                .build();
     }
 }
