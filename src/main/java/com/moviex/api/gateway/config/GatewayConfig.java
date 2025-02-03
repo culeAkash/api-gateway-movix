@@ -18,6 +18,9 @@ public class GatewayConfig {
                 .route("movie-service",r->r.path("/api/v1/movies/**")
                         .uri("lb://movie-service")
                 )
+                .route("movie-service",r->r.path("/api/v1/movieGenres/**")
+                        .uri("lb://movie-service")
+                )
                 .build();
     }
 }
